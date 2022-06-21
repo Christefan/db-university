@@ -1,0 +1,17 @@
+Query 1:
+SELECT students.* , students.degree_id AS laurea_economia FROM students INNER JOIN degrees ON degree_id = degrees.id WHERE degrees.name = 'Corso di Laurea in Economia';
+
+Query 2:
+SELECT degrees.* FROM degrees INNER JOIN departments ON degrees.department_id = departments.id WHERE departments.name = 'Dipartimento di Neuroscienze';
+
+Query 3:
+SELECT teachers.name, teachers.surname, courses.name FROM teachers INNER JOIN course_teacher ON course_teacher.teacher_id = teachers.id INNER JOIN courses ON courses.id = course_teacher.course_id WHERE teachers.id=44;
+
+Query 4:
+SELECT students.name, students.surname, degrees.name, departments.name FROM students INNER JOIN degrees ON degrees.id = degree_id INNER JOIN departments ON departments.id = degrees.department_id ORDER BY students.surname ASC;
+
+Query 5:
+SELECT degrees.name, courses.name, teachers.name,teachers.surname FROM degrees INNER JOIN courses ON courses.degree_id = degrees.id INNER JOIN course_teacher ON course_teacher.course_id = courses.id INNER JOIN teachers ON course_teacher.teacher_id = teachers.id;
+
+Query 6:
+SELECT teachers.name, teachers.surname, departments.name FROM course_teacher INNER JOIN teachers ON course_teacher.teacher_id = teachers.id INNER JOIN courses ON course_teacher.course_id = courses.id INNER JOIN degrees ON courses.degree_id = degrees.id INNER JOIN departments ON degrees.department_id = departments.id WHERE departments.name = 'Dipartimento di Matematica';
