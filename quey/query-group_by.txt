@@ -1,0 +1,11 @@
+Query 1:
+SELECT COUNT(*) AS `count_enrolment` FROM `students` GROUP BY YEAR(`enrolment_date`);
+
+Query 2:
+SELECT COUNT(*) AS `count_teachers` FROM `teachers` GROUP BY `office_address` HAVING `count_teachers` > 1;
+
+Query 3:
+SELECT AVG(`vote`) AS vote_average FROM `exam_student` GROUP BY `exam_id` ASC;
+
+Query 4:
+SELECT COUNT(*) AS count_Degrees FROM `degrees` GROUP BY `department_id`;
